@@ -1,16 +1,10 @@
 # -*- coding: utf-8 -*-
-import os
 from django.conf import settings
 from cms.plugin_pool import plugin_pool
-from cms.plugins import text
-from cms.plugins.text.utils import plugin_tags_to_user_html
-from cms.plugins.text.cms_plugins import TextPlugin as TextPluginBase
+from djangocms_text_ckeditor.utils import plugin_tags_to_user_html
+from djangocms_text_ckeditor.cms_plugins import TextPlugin as TextPluginBase
 from cmsplugin_text_wrapper.models import TextWrapper
 from cmsplugin_text_wrapper.forms import TextForm
-
-
-TEMPLATE_DIRS = getattr(settings, "TEMPLATE_DIRS", ()) + (os.path.join(os.path.dirname(text.__file__), 'templates'),)
-setattr(settings, 'TEMPLATE_DIRS', TEMPLATE_DIRS)
 
 
 class TextPlugin(TextPluginBase):
