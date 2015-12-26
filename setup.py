@@ -24,8 +24,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
     ],
     install_requires=[
-        "Django >= 1.3",
-        "django-cms >= 2.3",
     ],
     include_package_data=True,
     zip_safe = False,
