@@ -86,5 +86,8 @@ class MultiSelectField(models.Field):
 
 
 # needed for South compatibility
-from south.modelsinspector import add_introspection_rules
-add_introspection_rules([], ["^cmsplugin_text_wrapper\.fields\.MultiSelectField"])
+try:
+    from south.modelsinspector import add_introspection_rules
+    add_introspection_rules([], ["^cmsplugin_text_wrapper\.fields\.MultiSelectField"])
+except ImportError:
+    pass
